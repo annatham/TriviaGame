@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -12,46 +11,29 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
 
+            <div class="row">
+                <div class="container" id="quiz">
 
-                <h1 class="display-4 text-muted">trivia game</h1>
+                    <div class="col-12">
 
-                <p class="text-muted"> question here</p>
-                
-                <div class="form-check text-muted">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                          answer 1
-                        </label>
-                </div>
+                        <h1 class="display-3 text-muted">The Office</h1>
+                        
+                        <hr>
+                        
+                        <div class="text-muted" id="timer">Time Remaining: 25</div>
 
-                <div class="form-check text-muted">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                        <label class="form-check-label" for="defaultCheck2">
-                          answer 2
-                        </label>
-                </div>
+                        <hr>
 
-                <div class="form-check text-muted">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-                        <label class="form-check-label" for="defaultCheck3">
-                          answer 3
-                        </label>
-                </div>
+                        <p class="text-muted" id="questions"> question here</p>
 
-                <div class="form-check text-muted">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-                        <label class="form-check-label" for="defaultCheck4">
-                          answer 4
-                        </label>
-                </div>
-            </div>
-        </div>
+                        <hr>
+                        
+                        <button type="button" class="btn btn-outline-dark" id="submit">Submit</button>
 
-        <button type="button" class="btn btn-info" id="next">finished</button>
-
+                    </div>
+               </div>
+           </div>
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
