@@ -57,7 +57,7 @@ function decrement() {
   //  Decrease number by one.
   counter--;
   //  Show the number in the #timer tag
-  $("#timer").html("Timer: " + counter);
+  $("#timer").text("Timer: " + counter);
 
   //  Once number hits zero...
   if (counter === 0) {
@@ -89,6 +89,19 @@ function runGame() {
   $("#questions").append("<hr><button type='button' class='btn btn-outline-dark' id='submit'>Submit</button>");
 };
 
+
+function calculateResults(){
+  
+  $("#timer").remove();
+  $("#questions").remove();
+
+  $("#results").append("Correct: " + correct);
+  $("#results").append("<br>" + "Incorrect: " + incorrect);
+
+  $("#results").append("<hr><button type='button' class='btn btn-outline-dark' id='reset'>Reset</button>");
+
+};
+
 function endGame(){
   // clear timeer
   clearInterval(intervalId);
@@ -102,42 +115,22 @@ function endGame(){
     } else {
       incorrect++;
     }
+
   }
   
   calculateResults();
 
 };
 
- 
-function calculateResults(){
-
-  $("#timer").remove();
-  $("#questions").remove();
-
-  $("#results").append("Correct: " + correct);
-  $("#results").append("<br>" + "Incorrect: " + incorrect);
-
-  $("#results").append("<hr><button type='button' class='btn btn-outline-dark' id='reset'>Reset</button>");
-
-};
-
 // figure out this part
 function reset(){
-  empty();
+ $("#results").remove();
+
+ $("#quiz").append();
+ $("#start").append();
 };
 
 
-
-// function nextQuestion(){
-  //   clearInterval(intervalId);
-  //   intervalId = setInterval(decrement, 1000);
-  
-  //   decrement();
-  //   currentQuestion++;
-  //   loadQuiz();
-  // }
-  
-  // run quiz
 
 $(document).on("click", "#start", function() {
   runGame();
