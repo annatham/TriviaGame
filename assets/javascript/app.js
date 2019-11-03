@@ -15,7 +15,7 @@ var questions = [{
 {
   question: "Who dropped the chili?",
   choices: ["Kevin Malone", "Oscar Martinez", "Toby Flenderson", "Kelly Kapoor"],
-  correctAnswer: "Kevin",
+  correctAnswer: "Kevin Malone",
   image: "assets/images/chili.gif"
 },
 {
@@ -33,7 +33,7 @@ var questions = [{
 {
   question: "Who started the fire?",
   choices: ["Meredith Palmer", "Andy Bernard", "Michael Scott", "Ryan Howard"],
-  correctAnswer: "Refrigertion",
+  correctAnswer: "Ryan Howard",
   image: "assets/images/fire.gif"
 },
 {
@@ -80,25 +80,18 @@ function runGame() {
 
     // list input options, need spaces between options
     for (var a = 0; a <questions[i].choices.length; a++) {
-      $("#questions").append("<input class='form-check-input' type='checkbox'id='inlineCheckbox1'" + i +
-        "'value='" + questions[i].choices[a] + "''>" + questions[i].choices[a] + "  ");
+      $("#questions").append("<input class='form-check-input' input type='checkbox' id='question-" + i +
+        "'value='" + questions[i].choices[a] + "''>" + questions[i].choices[a]);
     }
-  }
 
+
+  $('input:checkbox').click(function() {
+    $('input:checkbox').not(this).prop('checked', false);
+  });
+
+    
   // append submit button to page
   $("#questions").append("<hr><button type='button' class='btn btn-outline-dark' id='submit'>Submit</button>");
-};
-
-
-function calculateResults(){
-  
-  $("#timer").remove();
-  $("#questions").remove();
-
-  $("#results").append("Correct: " + correct);
-  $("#results").append("<br>" + "Incorrect: " + incorrect);
-
-  $("#results").append("<hr><button type='button' class='btn btn-outline-dark' id='reset'>Reset</button>");
 
 };
 
@@ -119,6 +112,19 @@ function endGame(){
   }
   
   calculateResults();
+
+};
+
+
+function calculateResults(){
+  
+  $("#timer").remove();
+  $("#questions").remove();
+
+  $("#results").append("Correct: " + correct);
+  $("#results").append("<br>" + "Incorrect: " + incorrect);
+
+  $("#results").append("<hr><button type='button' class='btn btn-outline-dark' id='reset'>Reset</button>");
 
 };
 
@@ -144,4 +150,3 @@ $(document).on("click", "#submit", function() {
 $(document).on("click", "#reset", function() {
   reset();
 });
-
