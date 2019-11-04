@@ -32,3 +32,7 @@ button{
 /* .container {
     align-content: center;
 } */
+
+.form-check-input {
+    margin-right: 5%;
+}

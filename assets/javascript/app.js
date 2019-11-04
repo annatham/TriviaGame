@@ -47,7 +47,7 @@ var questions = [{
 //  Variable that will hold interval ID when executeed
 var intervalId;
 
-var counter = 5;
+var counter = 35;
 var correct = 0;
 var incorrect = 0;
 
@@ -80,16 +80,15 @@ function runGame() {
 
     // list input options, need spaces between options
     for (var a = 0; a <questions[i].choices.length; a++) {
-      $("#questions").append("<input class='form-check-input' input type='checkbox' id='question-" + i +
-        "'value='" + questions[i].choices[a] + "''>" + questions[i].choices[a]);
+      $("#questions").append("<div class='form-check form-check-inline'><input class='form-check-input' input type='checkbox' name='question-" + i +
+        "'id='inlineCheckbox1' value='" + questions[i].choices[a] + "''>" + questions[i].choices[a] + "</div><br>");
     }
 
+  }
+  // $('input:checkbox').click(function() {
+  //   $('input:checkbox').not(this).prop('checked', false);
+  // });
 
-  $('input:checkbox').click(function() {
-    $('input:checkbox').not(this).prop('checked', false);
-  });
-
-    
   // append submit button to page
   $("#questions").append("<hr><button type='button' class='btn btn-outline-dark' id='submit'>Submit</button>");
 
@@ -130,10 +129,12 @@ function calculateResults(){
 
 // figure out this part
 function reset(){
+
  $("#results").remove();
 
  $("#quiz").append();
  $("#start").append();
+
 };
 
 
@@ -143,10 +144,11 @@ $(document).on("click", "#start", function() {
 });
 
 $(document).on("click", "#submit", function() {
-  calculateResults();
+  endGame();
 });
 
 // is not returning to start oage
 $(document).on("click", "#reset", function() {
   reset();
 });
+
