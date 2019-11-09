@@ -47,7 +47,7 @@ var questions = [{
 //  Variable that will hold interval ID when executeed
 var intervalId;
 
-var counter = 35;
+var counter = 1000;
 var correct = 0;
 var incorrect = 0;
 
@@ -80,7 +80,7 @@ function runGame() {
 
     // list input options, need spaces between options
     for (var a = 0; a <questions[i].choices.length; a++) {
-      $("#questions").append("<div class='form-check form-check-inline'><input class='form-check-input' input type='checkbox' name='question-" + i +
+      $("#questions").append("<div class='form-check form-check-inline'><input class='form-check-input' input type='radio' name='question-" + i +
         "'id='inlineCheckbox1' value='" + questions[i].choices[a] + "''>" + questions[i].choices[a] + "</div><br>");
     }
 
